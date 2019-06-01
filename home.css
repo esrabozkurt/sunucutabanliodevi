@@ -1,0 +1,17 @@
+
+#content{
+    margin-left: 40%;
+    margin-right: 20%;
+    margin-bottom: 20%;
+    margin-top: 20%;
+}
+#page{
+    margin: auto;
+    width: 600px;
+    height: 100%;
+
+}
+#eklebuton{
+    position: absolute;
+    left: 800px;
+}

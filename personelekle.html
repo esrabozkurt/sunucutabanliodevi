@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="tr" >
+<head>
+    <link rel="stylesheet" href="home.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+  background-color: teal;
+  
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav p{
+    padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav p:hover{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+ul.menu ul{
+    display: none;
+}
+ul.menu >li:hover ul{
+    display:block;
+}
+
+</style>
+</head>
+<body>
+        <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                
+                <a href="homepage.html">Anasayfa</a>
+                <a href="personelekle.html">Personel Ekleme</a>
+                <a href="personelcikarma.php">Personel Çıkarma</a>
+                <a href="guncellemeon.html">Personel Bilgi Güncelleme</a>
+                <ul class="menu">
+                    <li>
+                        <a href="#">Analizler</a>
+                        <ul>
+                            <li><a href="dil.html">Dillere Göre</a></li>
+                            <li><a href="cinsiyet.html">Cinsiyete Göre</a></li>
+                            <li><a href="kisi.html">Personele Göre</a></li>
+                        </ul>
+                    </li>
+                </ul>
+        </div>
+              
+            <div id="main">
+              <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menü</span>
+            </div>
+            <div id="page">
+                <h1>Personel Ekleme Formu</h1>
+                <form method="post" action="ekleme.php">
+                    
+                    <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="">Personel No</span>
+                            </div>
+                        <input type="text" required autocomplete="off" name="no" class="form-control" />
+                            
+                    </div><br>
+                    
+                    <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="">Personel Adı</span>
+                            </div>
+                        <input type="text" required autocomplete="off" name="ad" class="form-control" />
+                        
+                    </div><br>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="">Personel Soyadı</span>
+                        </div>
+                        <input type="text" required autocomplete="off" name="soyad" class="form-control" />
+                    </div><br>
+                   
+                    <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <label class="input-group-text" for="inputGroupSelect01">Personel Cinsiyeti</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01" name="cinsiyet">
+                              <option selected>Seçiniz...</option>
+                              <option value="Kadın">Kadın</option>
+                              <option value="Erkek">Erkek</option>
+                            </select>
+                    </div>
+                    
+                    <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Doğum Tarihi</label>
+                            </div>
+                        <input class="form-control" type="date" name="tarih"/>
+                        
+                    </div><br>   
+                    <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Bildiği Diller</span>
+                            </div>
+                            
+                            <div class="input-group-prepend">
+                                    <span class="form-control">
+                            <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="İngilizce" name="dil1">
+                                    <label class="form-check-label" for="inlineCheckbox1">İngilizce</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Almanca" name="dil2">
+                                    <label class="form-check-label" for="inlineCheckbox2">Almanca</label>
+                                   </div>
+                            </span>
+                            </div>
+                        </div> <br>
+                    
+                    <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">Çalışma Ücreti</span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="ucret">
+                            <div class="input-group-append">
+                              <span class="input-group-text">.00</span>
+                              <span class="input-group-text">TL</span>
+                            </div>
+                          </div>
+
+                    
+                    <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <label class="input-group-text" for="inputGroupSelect01">Eğitim Durumu</label>
+                            </div>
+                            <select class="custom-select" id="inputGroupSelect01" name="egitim">
+                              <option selected>Seçiniz...</option>
+                              <option value="İlkokul">İlkokul</option>
+                              <option value="Lise">Lise</option>
+                              <option value="Ön Lisans">Ön Lisans</option>
+                              <option value="Lisans">Lisans</option>
+                            </select>
+                    </div>
+                    
+
+                        <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <label class="input-group-text" for="inputGroupSelect01">Çalışma Şekli</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01" name="calisma">
+                                  <option selected>Seçiniz...</option>
+                                  <option value="Yatılı">Yatılı</option>
+                                  <option value="Güniçi">Güniçi</option>
+                                </select>
+                        </div>
+                        <div id="eklebuton">
+                        <button type="submit" class="btn btn-danger">Personeli Ekle</button>
+                        <br>
+                        <br>
+                        </div>
+                </form>
+            </div>
+            <script>
+                function openNav() {
+                  document.getElementById("mySidenav").style.width = "250px";
+                  document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+                }
+                
+                function closeNav() {
+                  document.getElementById("mySidenav").style.width = "0";
+                  document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "teal";
+                }
+                </script>
+      </body>
